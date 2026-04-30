@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content=""><meta name="author" content="">
+	<title>Especialidades | CTN</title>
+	<link href="assets/images/logo2.png" rel="shortcut icon" type="image/logo2.png" /><!-- mobile settings --><!-- Bootstrap Core CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet" /><!-- Custom CSS -->
+	<link href="assets/css/blueridge.css" rel="stylesheet" />
+	<link href="assets/css/filter-portfolio.css" rel="stylesheet" />
+	<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet" />
+	<link href="assets/owl-carousel/owl.theme.css" rel="stylesheet" /><!-- Lightbox -->
+	<link href="assets/magnific-popup/magnific-popup.css" rel="stylesheet" /><!-- Custom Fonts -->
+	<link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,300,700,500" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" rel="stylesheet" type="text/css" /><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css" />
+<style>
+.especialidades-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.especialidades-tabs li a {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.especialidad-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.especialidad-icon {
+  width: 60px;
+  height: 60px;
+  transition: all 0.4s ease;
+}
+
+.especialidad-label {
+  font-size: 0;
+  margin-left: 0;
+  opacity: 0;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+/* Activa: ícono grande, desplazado, texto revelado */
+.especialidades-tabs li.active .especialidad-icon {
+  width: 100px;
+  height: 100px;
+  transform: translateX(-10px);
+}
+
+.especialidades-tabs li.active .especialidad-label {
+  font-size: 22px;
+  margin-left: 14px;
+  opacity: 1;
+}
+
+/* Colores temáticos */
+.especialidad-info .especialidad-label { color: #AB2A3E; }
+.especialidad-mecanica_ind .especialidad-label { color: #008000; }
+.especialidad-mecanica_auto .especialidad-label { color: #000080; }
+.especialidad-construccion .especialidad-label { color: #b9ae48; }
+.especialidad-electronica .especialidad-label { color: #808080; }
+.especialidad-electromecanica .especialidad-label { color: #0000FF; }
+.especialidad-electricidad .especialidad-label { color: #87CEEB; }
+.especialidad-quimica .especialidad-label { color: #03BB85; }
+
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 100%; /* Asegura que todas crezcan igual */
+}
+
+.card p {
+  flex-grow: 1;
+  min-height: 120px;
+  margin-bottom: 1rem; /* Espacio antes del botón */
+}
+
+.btn-contacto {
+  margin-top: auto;
+}
+.card {
+  min-height: 340px; /* Ajusta según el contenido más largo */
+}
+
+
+  .btn-contacto {
+  border: 2px solid transparent;
+  border-radius: 2em;   /* mismo estilo redondeado */
+  padding: 8px 20px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+  #lightnav a {
+  color: white;
+  transition: color 0.3s;
+}
+/* Ajustar solo el texto de Informática */
+#info .post-wrapper {
+  max-width: 900px;   /* mismo ancho que las columnas de Mecánica */
+  margin: 0 auto;     /* centrado */
+}
+
+.flexslider {
+  max-width: 800px;   /* o el ancho que quieras */
+  margin: 0 auto;     /* centrado */
+}
+
+#lightnav.nav-especial a {
+  color: black !important;
+}
+#lightnav.nav-especial a:hover {
+  color: white !important;
+}
+
+</style>
+<style>
+/* estilo normal (granate) */
+.btn-contacto {
+  border: 2px solid #AB2A3E;
+  color: #AB2A3E; /* quitar !important */
+  background-color: transparent;
+  transition: all 0.4s ease;
+}
+.btn-contacto:hover {
+  background-color: #AB2A3E;
+  border-color: #AB2A3E;
+  color: white;
+}
+
+/* estilo cuando se activa especialidad */
+.nav-especial .btn-contacto {
+  color: black;
+  background-color: transparent !important;
+}
+.nav-especial .btn-contacto:hover {
+  color: black !important;
+}
+
+/* enlaces de la navbar en especialidad */
+.nav-especial a {
+  color: black !important;
+  transition: color 0.3s;
+}
+.nav-especial a:hover {
+  color: black !important; /* se mantiene negro al pasar */
+}
+
+#institucional-btn {
+  transition: background-color 1s ease, color 0.5s ease !important;
+}
+/* estilo base */
+.dropdown-menu {
+  display: block !important;        /* siempre block para poder animar */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-radius: 0 0 2em 2em !important;       /* esquinas redondeadas abajo */
+  transition: all 0.4s ease;
+}
+
+/* cuando bootstrap lo abre */
+.dropdown-menu.show,
+.open > .dropdown-menu {
+  max-height: 500px;
+  opacity: 1;
+}
+</style>
+<style>
+  /* transición suave para el color */
+  #lightnav {
+    transition: background-color 1s ease !important;
+  }
+</style>
+<style>
+#lightnav a {
+    color: white !important;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+#lightnav a:hover {
+    color: black !important;
+}
+.logo-container {
+  position: relative;
+  width: auto;
+  height: 50px;
+  display: inline-block;
+  margin-top: -12px;
+  margin-left: -100px;
+}
+
+
+
+.logo-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  transition: opacity 0.4s ease;
+}
+
+.logo-base {
+  z-index: 1;
+  opacity: 1;
+}
+
+body{
+  height: 100%;
+}
+
+.logo-hovered {
+  z-index: 2;
+  opacity: 0;
+}
+
+.logo-container:hover .logo-hovered {
+  opacity: 1;
+}
+
+.logo-container:hover .logo-base {
+  opacity: 0;
+}
+
+#espes h1 {
+    margin: 0 !important;
+    padding-top: 50px;
+}
+
+#full-section {
+    min-height: 45vh;
+    padding-bottom: 80px; 
+    padding-top: 40px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+</style>
+</head>
+<body><!-- Nav -->
+<nav class="navbar navbar-default navbar-fixed-top" id="lightnav" style="background-color: #471c0c;">
+<div class="container">
+<div class="navbar-header page-scroll"><button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span></button><a class="navbar-brand page-scroll text-uppercase pddn-10" href="index.html"><div class="logo-container">
+  <img src="assets/images/themelogo/logoctnblanco.png" class="logo-base" />
+  <img src="assets/images/themelogo/logoctn.png" class="logo-hovered" />
+</div>
+</a></div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: -100px;">
+<ul class="nav navbar-nav navbar-right"><!-- Dropdown -->
+	<li class="dropdown" role="presentation"><a href="index.html">Inicio</a> <!-- /.Dropdown --> <!-- Dropdown Services --></li>
+	<li class="dropdown"><a href="espe.html">Especialidades</a></li>
+	<!-- /.Dropdown About --><!-- Portafolio -->
+	<li class="dropdown"><a id="institucional-btn" style="background-color: #471c0c;" aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Institucional<span class="caret"></span></a>
+	<ul class="dropdown-menu">
+		<li><a href="direccion.html">Direcci&oacute;n General</a></li>
+    <li><a href="direccion.html">Escuela Empresa</a></li>
+    <li><a href="Formularios.html"> Documentaci&oacute;n</a></li>
+    <li><a href="cetna.html">ACES</a></li>
+    <li><a href="cetna.html">CETNA</a></li>
+	</ul>
+	</li>
+	<!-- /.Dropdown Team --><!-- Dropdown Contact -->
+	<li class="dropdown"><a href="contact2.html">Contacto</a></li>
+	<!-- /.Dropdown Blog --><!-- Dropdown About -->
+	<li class="dropdown"><a href="acerca.html">Acerca de</a></li>
+	<!-- /.Dropdown About -->
+</ul>
+</div>
+<!-- /.navbar-collapse --></div>
+<!-- /.container --></nav>
+<!-- /.Navigation --><!-- Header -->
+
+
+<!-- /.Case Studies --><!-- Services Section -->
+
+<section class="bg-lighter-gray" style="padding-top:80px;">
+<div class="container" >
+<div class="row">
+<div class="col-lg-12 text-center  wow fadeInDown">
+<h1 id="espes">&iquest;Qu&eacute; Especialidades Ofrecemos?</h1>
+</div>
+</div>
+<!-- Tabs -->
+</div>
+
+
+
+
+<hr class="border-sm">
+<div class="row text-center" id="full-section">
+
+<div class="col-md-3 col-sm-6 mrgn-30-btm wow zoomIn animated" style="visibility: visible;">
+<p><a href="construcciones.html"><img alt="" height="105" src="assets/images/icons/icon-cc.png" width="105"></a></p>
+
+<h2 class="service-title"><a href="construcciones.html"><font color="#3d3b3b">Construcciones Civiles</font></a></h2>
+</div>
+
+<div class="col-md-3 col-sm-6 mrgn-30-btm wow zoomIn animated" style="visibility: visible;">
+<p><a href="electricidad.html"><img alt="" height="105" src="assets/images/icons/icon-edad.png" width="105"></a></p>
+
+<h2 class="service-title"><a href="electricidad.html"><font color="#3d3b3b">Electricidad</font></a></h2>
+</div>
+
+<div class="col-md-3 col-sm-6 mrgn-20-btm wow zoomIn animated" style="visibility: visible;">
+<p><a href="eik.html"><img alt="" height="105" src="assets/images/icons/icon-eik.png" width="105"></a></p>
+
+<h2 class="service-title"><a href="eik.html"><font color="#3d3b3b">Electr&oacute;nica</font></a></h2>
+</div>
+
+<div class="col-md-3 col-sm-6 mrgn-30-btm wow zoomIn animated" style="visibility: visible;">
+<p><a href="emca.html"><img alt="" height="105" src="assets/images/icons/icon-emca.png" width="105"></a></p>
+
+<h2 class="service-title"><a href="emca.html"><font color="#3d3b3b">Electromec&aacute;nica</font></a></h2>
+</div>
+
+<div class="col-md-3 col-sm-6 mrgn-30-btm wow zoomIn animated" style="visibility: visible;">
+<p><a href="infomain.html"><img alt="" height="110" src="assets/images/icons/icon-info.png" width="105"></a></p>
+
+<h2 class="service-title"><a href="infomain.html"><font color="#3d3b3b">Inform&aacute;tica</font></a></h2>
+</div>
+
+<div class="col-md-3 col-sm-6 mrgn-30-btm wow zoomIn animated" style="visibility: visible;">
+<p><a href="indu.html"><img alt="" height="105" src="assets/images/icons/icon-indu.png" width="105"></a></p>
+
+<h2 class="service-title"><a href="indu.html"><font color="#3d3b3b">Mec&aacute;nica Industrial</font></a></h2>
+</div>
+
+<div class="col-md-3 col-sm-6 mrgn-30-btm wow zoomIn animated" style="visibility: visible;">
+<p><a href="auto.html"><img alt="" height="105" src="assets/images/auto-logo.png" width="105"></a></p>
+
+<h2 class="service-title"><a href="auto.html"><font color="#3d3b3b">Mec&aacute;nica Automotriz</font></a></h2>
+</div>
+
+<div class="col-md-3 col-sm-6 mrgn-30-btm wow zoomIn animated" style="visibility: visible;">
+<p><a href="qca.html"><img alt="" height="105" src="assets/images/quimica-logo.png" width="105"></a></p>
+
+<h2 class="service-title"><a href="qca.html"><font color="#3d3b3b">Qu&iacute;mica</font></a></h2>
+</div>
+</div>
+<!-- /.Services Section --><!-- Call-To-Action Section -->
+</div>   <!-- row -->
+</div>   <!-- container -->
+</section> <!-- si aplica -->
+
+
+<footer id="footer" class="bg-dark-blue">
+<div class="container">
+<div class="row"><!-- Address, Social Links & Copyright -->
+<div class="col-md-4 col-md-offset-4">
+<p>R.I. 3 Corrales c/ Dr. Hassler<br />
+Campos Cervera, Asunci&oacute;n<br />
+Tel: (021) 608 663</p>
+
+<ul class="list-inline social-buttons mrgn-10-top"><!--  <li><a href="#"><i class="fa fa-twitter"></i></a> </li>-->
+</ul>
+<span class="copyright">Copyright &copy; Desarrollado en la especialidad de Inform&aacute;tica.</span></div>
+</div>
+<!-- /.Address, Social Links & Copyright --></div>
+<!-- /.container --></footer>
+<!-- jQuery -->
+<script src="assets/js/jquery.js"></script>
+
+<!-- Bootstrap -->
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- Plugins -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/owl-carousel/owl.carousel.js"></script>
+<script src="assets/js/counterup/jquery.counterup.min.js"></script>
+<script src="assets/js/jquery.easy-pie-chart.js"></script>
+<script src="assets/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- FlexSlider (después de jQuery y Bootstrap) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+
+<!-- Tus scripts personalizados -->
+<script src="assets/js/blueridge.js"></script>
+<script src="assets/js/contact_me.js"></script>
+<script src="assets/js/jqBootstrapValidation.js"></script>
+
+
+
+<style>
+  /* transición suave para el color */
+  #lightnav {
+    transition: background-color 0.5s ease;
+  }
+</style>
+
+
+
+
+
+</body>
+</html>

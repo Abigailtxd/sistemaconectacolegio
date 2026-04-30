@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content=""><meta name="author" content="">
+	<title>Informatica CTN</title>
+	<link href="assets/images/logo2.png" rel="shortcut icon" type="image/logo2.png" /><!-- mobile settings --><!-- Bootstrap Core CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet" /><!-- Custom CSS -->
+	<link href="assets/css/blueridge.css" rel="stylesheet" />
+	<link href="assets/css/filter-portfolio.css" rel="stylesheet" />
+	<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet" />
+	<link href="assets/owl-carousel/owl.theme.css" rel="stylesheet" /><!-- Lightbox -->
+	<link href="assets/magnific-popup/magnific-popup.css" rel="stylesheet" /><!-- Custom Fonts -->
+	<link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,300,700,500" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" rel="stylesheet" type="text/css" /><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css" />
+<style>
+.especialidades-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.especialidades-tabs li a {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.especialidad-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.especialidad-icon {
+  width: 60px;
+  height: 60px;
+  transition: all 0.4s ease;
+}
+
+.especialidad-label {
+  font-size: 0;
+  margin-left: 0;
+  opacity: 0;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+/* Activa: ícono grande, desplazado, texto revelado */
+.especialidades-tabs li.active .especialidad-icon {
+  width: 100px;
+  height: 100px;
+  transform: translateX(-10px);
+}
+
+.especialidades-tabs li.active .especialidad-label {
+  font-size: 22px;
+  margin-left: 14px;
+  opacity: 1;
+}
+
+/* Colores temáticos */
+.especialidad-info .especialidad-label { color: #AB2A3E; }
+.especialidad-mecanica_ind .especialidad-label { color: #008000; }
+.especialidad-mecanica_auto .especialidad-label { color: #000080; }
+.especialidad-construccion .especialidad-label { color: #b9ae48; }
+.especialidad-electronica .especialidad-label { color: #808080; }
+.especialidad-electromecanica .especialidad-label { color: #0000FF; }
+.especialidad-electricidad .especialidad-label { color: #87CEEB; }
+.especialidad-quimica .especialidad-label { color: #03BB85; }
+
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 100%; /* Asegura que todas crezcan igual */
+}
+
+.card p {
+  flex-grow: 1;
+  min-height: 120px;
+  margin-bottom: 1rem; /* Espacio antes del botón */
+}
+
+.btn-contacto {
+  margin-top: auto;
+}
+.card {
+  min-height: 340px; /* Ajusta según el contenido más largo */
+}
+
+
+  .btn-contacto {
+  border: 2px solid transparent;
+  border-radius: 2em;   /* mismo estilo redondeado */
+  padding: 8px 20px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+  #lightnav a {
+  color: white;
+  transition: color 0.3s;
+}
+/* Ajustar solo el texto de Informática */
+#info .post-wrapper {
+  max-width: 900px;   /* mismo ancho que las columnas de Mecánica */
+  margin: 0 auto;     /* centrado */
+}
+
+.flexslider {
+  max-width: 800px;   /* o el ancho que quieras */
+  margin: 0 auto;     /* centrado */
+}
+
+#lightnav.nav-especial a {
+  color: black !important;
+}
+#lightnav.nav-especial a:hover {
+  color: white !important;
+}
+body {
+  padding-top: 70px; /* ajusta según la altura de tu navbar */
+}
+</style>
+<style>
+/* estilo normal (granate) */
+.btn-contacto {
+  border: 2px solid #AB2A3E;
+  color: #AB2A3E; /* quitar !important */
+  background-color: transparent;
+  transition: all 0.4s ease;
+}
+.btn-contacto:hover {
+  background-color: #AB2A3E;
+  border-color: #AB2A3E;
+  color: white;
+}
+
+/* estilo cuando se activa especialidad */
+.nav-especial .btn-contacto {
+  color: black;
+  background-color: transparent !important;
+}
+.nav-especial .btn-contacto:hover {
+  color: black !important;
+}
+
+/* enlaces de la navbar en especialidad */
+.nav-especial a {
+  color: black !important;
+  transition: color 0.3s;
+}
+.nav-especial a:hover {
+  color: black !important; /* se mantiene negro al pasar */
+}
+
+#institucional-btn {
+  transition: background-color 1s ease, color 0.5s ease !important;
+}
+/* estilo base */
+.dropdown-menu {
+  display: block !important;        /* siempre block para poder animar */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-radius: 0 0 2em 2em !important;       /* esquinas redondeadas abajo */
+  transition: all 0.4s ease;
+}
+
+/* cuando bootstrap lo abre */
+.dropdown-menu.show,
+.open > .dropdown-menu {
+  max-height: 500px;
+  opacity: 1;
+}
+</style>
+<style>
+  /* transición suave para el color */
+  #lightnav {
+    transition: background-color 1s ease !important;
+  }
+</style>
+<style>
+#lightnav a {
+    color: white !important;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+#lightnav a:hover {
+    color: black !important;
+}
+.logo-container {
+  position: relative;
+  width: auto;
+  height: 50px;
+  display: inline-block;
+  margin-top: -12px;
+  margin-left: -100px;
+}
+
+.logo-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  transition: opacity 0.4s ease;
+}
+
+.logo-base {
+  z-index: 1;
+  opacity: 1;
+}
+
+.logo-hovered {
+  z-index: 2;
+  opacity: 0;
+}
+
+.logo-container:hover .logo-hovered {
+  opacity: 1;
+}
+
+.logo-container:hover .logo-base {
+  opacity: 0;
+}
+
+.container-info{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  
+}
+
+
+.info-section {
+   
+    text-align: center;
+}
+
+
+.info-title {
+    margin-top: 0;
+    margin-bottom: 0px;
+   
+}
+
+
+.info-image-wrapper {
+    max-width: 1200px;    
+    margin: 0 auto;        
+}
+
+.info-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;    
+    object-fit: cover;
+}
+
+
+.info-content {
+    margin-top: 50px;
+}
+
+.info-card {
+    background: white;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.info-card-img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.info-card-body {
+    padding: 20px 5px;
+}
+
+.info-card-underline {
+    width: 60px;
+    height: 3px;
+    background-color: #B3001B; /* deep red */
+    margin-bottom: 15px;
+}
+
+.info-card-title {
+    font-size: 26px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.info-card-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.info-card-title a:hover {
+    color: #B3001B; /* red hover */
+}
+
+.info-card-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.info-card-list a {
+    font-size: 20px;
+    color: #B3001B;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.info-card-list a:hover {
+    color: black;
+    
+}
+
+.history {
+  color:black;
+}
+
+.section-block {
+  padding: 60px 0;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.learn-more {
+  font-weight: bold;
+  color: #b3001b;
+  text-decoration: none;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body><!-- Nav -->
+<nav class="navbar navbar-default navbar-fixed-top" id="lightnav" style="background-color: #820417">
+<div class="container">
+<div class="navbar-header page-scroll"><button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span></button><a class="navbar-brand page-scroll text-uppercase pddn-10" href="index.html"><div class="logo-container">
+  <img src="assets/images/themelogo/logo3.png" class="logo-base" />
+  <img src="assets/images/themelogo/logo.png" class="logo-hovered" />
+</div>
+</a></div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: -100px;">
+<ul class="nav navbar-nav navbar-right"><!-- Dropdown -->
+	<li class="dropdown" role="presentation"><a href="index.html">Inicio</a> <!-- /.Dropdown --> <!-- Dropdown Services --></li>
+	<li class="dropdown"><a href="espe.html"><font>Especialidades</font></a></li>
+	<!-- /.Dropdown About --><!-- Portafolio -->
+	<li class="dropdown"><a id="institucional-btn" style="background-color:#820417" aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Institucional<span class="caret"></span></a>
+	<ul class="dropdown-menu">
+		<li><a href="direccion.html">Direccion General</a></li>
+		<li><a href="admision.html">Admision</a></li>
+    <li><a href="cetna.html">CETNA</a></li>
+    <li><a href="Formularios.html">Formularios</a></li>
+	</ul>
+	</li>
+	<li class="dropdown"><a href="contact2.html">Contacto</a></li>
+	
+	<li class="dropdown"><a href="acerca.html">Acerca de</a></li>
+	
+</ul>
+</div>
+</div>
+</nav>
+
+
+<section class="info-section">
+    <h1 class="info-title">PERFIL DE ESPECIALIDAD</h1>
+    <h3 style="margin-top:0px; margin-bottom:10px;"><a href=# style="a:hover{color:#B3001B}">Inform&aacute;tica</a></h3>
+
+      
+</section>
+  <div class="container">
+    <section class="container my-5">
+      <div class="row align-items-center mb-5" >
+        <div class="col-md-6">
+          <h2 class="section-title" id="egresado">Perfil del Egresado</h2>
+          <h3>Conoc&eacute; al estudiante que queremos formar</h3>
+          <p>
+            Descarg&aacute; este documento para acceder a una definici&oacute;n oficial de las competencias, valores y actitudes que debe cultivar un egresado al culminar el bachillerato.
+          </p>
+          <a href="assets/PERFIL_BACH_TEC_EN_INFORMATICA.pdf" class="learn-more">Descargar perfil</a>
+      </div>
+
+      <div class="col-md-6">
+        <img src="assets/images/acto-graduacion-2024.jpg" class="img-fluid">
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="assets/images/coord-info.jpg" class="img-fluid">
+      </div>
+
+      <div class="col-md-6">
+        <h2 class="section-title" id="coordi">PERFIL DEL COORDINADOR</h2>
+        <h3>Graciela Noem&iacute; L&oacute;pez Molinas</h3>
+        <p>Egresada de la Facultad Polit&eacute;cnica de la Universidad Nacional de Asunci&oacute;n con el T&iacute;tulo Licenciatura en An&aacute;lisis de Sistemas Inform&aacute;ticos.<br>
+        Egresada del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios.<br>
+        Egresada de la UMA con el T&iacute;tulo de Lic. en Ciencias de la Educaci&oacute;n.<br>
+        Inicia su actividad docente en el C.T.N. en el a&ntilde;o 1995.<br>
+        Coordinadora de la especialidad desde el a&ntilde;o 1996 hasta la fecha.<br>
+
+        Matricula Nro: 5183
+        </p>
+        
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<footer style="background-color: #820417; color:white;" >
+<div class="container">
+<div class="row"><!-- Address, Social Links & Copyright -->
+<div class="col-md-4 col-md-offset-4">
+<p>R.I. 3 Corrales c/ Dr. Hassler<br />
+Campos Cervera, Asunci&oacute;n<br />
+Tel: (021) 608 663</p>
+
+<ul class="list-inline social-buttons mrgn-10-top"><!--  <li><a href="#"><i class="fa fa-twitter"></i></a> </li>-->
+</ul>
+<span class="copyright">Copyright &copy; Colegio T&eacute;cnico Nacional</span></div>
+</div>
+
+<style>
+  /* transición suave para el color */
+  #lightnav {
+    transition: background-color 0.5s ease;
+  }
+</style>
+
+<script>
+$(document).ready(function () {
+function actualizarFooter(especialidad) {
+  const colores = {
+    info: "#AB2A3E",
+    mecanica_ind: "#008000",
+    mecanica_auto: "#000080",
+    construccion: "#b9ae48",
+    electronica: "#808080",
+    electromecanica: "#0000FF",
+    electricidad: "#87CEEB",
+    quimica: "#03BB85"
+  };
+
+  const textos = {
+    info: "Desarrollado en la especialidad de Informática.",
+    mecanica_ind: "Desarrollado en la especialidad de Mecánica Industrial.",
+    mecanica_auto: "Desarrollado en la especialidad de Mecánica Automotriz.",
+    construccion: "Desarrollado en la especialidad de Construcción.",
+    electronica: "Desarrollado en la especialidad de Electrónica.",
+    electromecanica: "Desarrollado en la especialidad de Electromecánica.",
+    electricidad: "Desarrollado en la especialidad de Electricidad.",
+    quimica: "Desarrollado en la especialidad de Química."
+  };
+
+  let color = colores[especialidad] || "#AB2A3E";
+  let texto = textos[especialidad] || textos["info"];
+  let textColor = ["electronica","construccion","quimica","electricidad"].includes(especialidad) ? "black" : "white";
+
+  // Aplicar estilos con !important usando atributo style directamente
+  $("#footer").attr("style", `background-color: ${color} !important; color: ${textColor} !important; transition: all 0.3s ease !important;`);
+  $("#footer-address").attr("style", `color: ${textColor} !important;`);
+  $("#footer-copyright").text(texto).attr("style", `color: ${textColor} !important;`);
+}
+$(document).ready(function () {
+  // Detectar pestaña activa al cargar
+  var pestañaActiva = $(".tab-pane.active").attr("id"); // ej: "info"
+  if (pestañaActiva) {
+    actualizarFooter(pestañaActiva);
+  }
+
+  // Mantener el evento para cuando cambies de pestaña
+  $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+    var target = $(e.target).attr("href").replace("#", "");
+    actualizarFooter(target);
+  });
+});
+
+function actualizarBoton(especialidad) {
+  const btn = $(".btn-contacto");
+
+  const colores = {
+    info: "#AB2A3E",
+    mecanica_ind: "#008000",
+    mecanica_auto: "#000080",
+    construccion: "#b9ae48",
+    electronica: "#808080",
+    electromecanica: "#0000FF",
+    electricidad: "#87CEEB",
+    quimica: "#03BB85"
+  };
+
+  let color = colores[especialidad] || "#AB2A3E";
+  let especialesNegro = ["electronica","construccion","quimica","electricidad"];
+
+  btn.css({
+    "background-color": "transparent",
+    "border-color": color,
+    "color": color,
+    "transition": "all 0.3s ease"
+  });
+
+  btn.off("mouseenter mouseleave").hover(
+    function() {
+      $(this).css("background-color", color);
+      $(this).css("color", especialesNegro.includes(especialidad) ? "black" : "white");
+    },
+    function() {
+      $(this).css({
+        "background-color": "transparent",
+        "color": color
+      });
+    }
+  );
+}
+
+
+
+$('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+  var target = $(e.target).attr("href").replace("#","");
+  actualizarBoton(target);
+});
+
+
+// Evento al cambiar tab
+$('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+  var target = $(e.target).attr("href").replace("#","");
+  actualizarBoton(target);
+});
+
+
+
+// Evento al cambiar tab
+$('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+  var target = $(e.target).attr("href").replace("#","");
+  actualizarBoton(target);
+  actualizarFooter(target);
+});
+function aplicarEstilos(especialidad) {
+  $("#lightnav").removeClass("nav-especial").css("background-color", "#471c0c");
+
+  $(".navbar-brand img").stop(true,true).fadeOut(300, function(){
+    $(this).attr("src", "assets/images/themelogo/logo3.png").fadeIn(300);
+  });
+
+  if (["electronica","construccion","quimica","electricidad"].includes(especialidad)) {
+    $("#lightnav").addClass("nav-especial").css("background-color", "white");
+    $(".navbar-brand img").stop(true,true).fadeOut(300, function(){
+      $(this).attr("src", "assets/images/themelogo/logo.png").fadeIn(300);
+    });
+  }
+}
+
+  // evento cuando cambia el tab de especialidad
+  $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+    var target = $(e.target).attr("href").replace("#", "");
+    aplicarEstilos(target);
+  });
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  var target = $(e.target).attr("href"); // id del tab activo
+  var colorNav = ""; // variable para color del nav
+  var textColor = "white"; // por defecto blanco
+
+  // Resetear primero
+  $("#lightnav, #institucional-btn, #institucional-btn + .dropdown-menu")
+    .css("background-color", "")
+    .css("color", "");
+
+  if (target === "#info") {
+    colorNav = "#AB2A3E"; textColor = "white";
+  } else if (target === "#mecanica_ind") {
+    colorNav = "#008000"; textColor = "white";
+  } else if (target === "#mecanica_auto") {
+    colorNav = "#000080"; textColor = "white";
+  } else if (target === "#construccion") {
+    colorNav = "#b9ae48"; textColor = "black";
+  } else if (target === "#electronica") {
+    colorNav = "#808080"; textColor = "white";
+  } else if (target === "#electromecanica") {
+    colorNav = "#0000FF"; textColor = "white";
+  } else if (target === "#electricidad") {
+    colorNav = "#87CEEB"; textColor = "black";
+  } else if (target === "#quimica") {
+    colorNav = "#03BB85"; textColor = "white";
+  }
+
+  // aplicar colores
+  if (colorNav !== "") {
+    $("#lightnav").css("background-color", colorNav);
+    $("#institucional-btn").css({"background-color": colorNav, "color": textColor});
+    $("#institucional-btn + .dropdown-menu").css("background-color", colorNav);
+    $("#institucional-btn + .dropdown-menu a").css("color", textColor);
+  }
+});
+// Al cargar la página, inicializar botones y footer con la pestaña activa
+var pestañaActiva = $(".tab-pane.active").attr("id"); // ej: "info"
+if (pestañaActiva) {
+  actualizarBoton(pestañaActiva);
+}
+
+});
+</script>
+<script>
+$(document).ready(function () {
+  // Función para inicializar un carrusel si aún no fue activado
+  function activarCarrusel($slider) {
+    if (!$slider.hasClass("flexslider-initialized")) {
+      $slider.flexslider({
+        animation: "slide",
+        controlNav: true,
+        directionNav: true,
+        slideshowSpeed: 4000,
+        animationSpeed: 600,
+        pauseOnHover: true
+      });
+      $slider.addClass("flexslider-initialized");
+    }
+  }
+
+  // Inicializar todos los carruseles visibles al cargar
+  $(".tab-pane.active .flexslider").each(function () {
+    activarCarrusel($(this));
+  });
+
+  // Cuando se activa una pestaña, inicializar su carrusel
+  $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+    var target = $(e.target).attr("href"); // ejemplo: "#info"
+    var $slider = $(target).find(".flexslider");
+    activarCarrusel($slider);
+  });
+});
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+fetch('http://localhost:3000/api/puntajes')
+  .then(res => res.json())
+  .then(data => {
+    // Normalizar nombres de la API
+    const normalizar = str => str
+      .toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // quita tildes
+
+    // Orden fijo de especialidades
+    const nombres = [
+      'electronica',
+      'electromecanica',
+      'informatica',
+      'quimica',
+      'construcciones civiles',
+      'mecanica automotriz',
+      'mecanica industrial',
+      'electricidad'
+    ];
+
+    const colores = [
+      '#808080',
+      '#0000FF',
+      '#AB2A3E',
+      '#03BB85',
+      '#b9ae48',
+      '#000080',
+      '#008000',
+      '#87CEEB'
+    ];
+
+    const logosEspecialidades = [
+      'Img/eik_c.png',
+      'Img/emca_c.png',
+      'Img/info_c.png',
+      'Img/qca_c.png',
+      'Img/cc_c.png',
+      'Img/auto_c.png',
+      'Img/indu_c.png',
+      'Img/edad_c.png'
+    ];
+
+    const imagenes = logosEspecialidades.map(src => {
+      const img = new Image();
+      img.src = src;
+      return img;
+    });
+
+    // Mapear puntajes segun el orden fijo
+    const puntajes = nombres.map(nombre => {
+      const item = data.find(d => normalizar(d.especialidad) === nombre);
+      return item ? item.puntaje : 0;
+    });
+
+    const total = puntajes.reduce((a,b) => a + b, 0);
+    const porcentajes = puntajes.map(p => total > 0 ? ((p/total)*100).toFixed(1) : 0);
+
+    const ctx = document.getElementById('graficoEspecialidades').getContext('2d');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: nombres,
+        datasets: [{
+          label: 'Porcentaje',
+          data: porcentajes,
+          backgroundColor: colores,
+          borderRadius: 10
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: { 
+            display: true, 
+            text: 'Especialidades con mas puntajes (%)',
+            color: '#fff'
+          },
+          tooltip: {
+            bodyColor: '#fff',
+            titleColor: '#fff'
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              callback: function(value, index) {
+                return nombres[index];
+              },
+              color: function(ctx) {
+                return colores[ctx.index];
+              },
+              font: {
+                weight: 'bold'
+              }
+            },
+            grid: { color: 'rgba(255,255,255,0.2)' }
+          },
+          y: {
+            beginAtZero: true,
+            max: 100,
+            ticks: { 
+              color: '#fff',
+              callback: value => value + '%'
+            },
+            grid: { color: 'rgba(255,255,255,0.2)' }
+          }
+        }
+      },
+      plugins: [{
+        id: 'logoSobreBarras',
+        afterDatasetsDraw(chart) {
+          const {ctx, scales: {x, y}} = chart;
+          chart.data.datasets[0].data.forEach((value, index) => {
+            const xPos = x.getPixelForValue(index);
+            const yPos = y.getPixelForValue(value);
+            const img = imagenes[index];
+            if (img.complete) {
+              ctx.save();
+              ctx.globalCompositeOperation = 'source-over';
+              ctx.drawImage(img, xPos - 25, yPos - 50, 50, 50);
+              ctx.restore();
+            }
+          });
+        }
+      }]
+    });
+  })
+  .catch(err => console.error(err));
+</script>
+
+
+
+</body>
+</html>

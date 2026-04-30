@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Contacto | CTN</title>
+<link href="assets/images/logo2.png" rel="shortcut icon" type="image/logo2.png" /><!-- mobile settings --><!-- Bootstrap Core CSS -->
+<!-- Bootstrap Core CSS -->
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="assets/css/blueridge.css" rel="stylesheet">
+<link href="assets/css/filter-portfolio.css" rel="stylesheet"/>
+<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet">
+<link href="assets/owl-carousel/owl.theme.css" rel="stylesheet">
+<!-- Lightbox -->
+<link href="assets/magnific-popup/magnific-popup.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Dosis:400,300,700,500' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style>
+  /* Fuerza estilo granate en las otras páginas */
+#lightnav.navbar-default .dropdown-menu {
+  background-color: #471c0c !important;
+  border-radius: 0 0 2em 2em !important; /* mantiene bordes redondeados */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease; /* animación suave */
+}
+
+#lightnav.navbar-default .dropdown-menu.show,
+#lightnav.navbar-default .open > .dropdown-menu {
+  max-height: 500px; /* altura animada */
+  opacity: 1;
+}
+/* Links dentro del menú */
+#lightnav.navbar-default .dropdown-menu > li > a {
+  color: white !important;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+#lightnav.navbar-default .dropdown-menu > li > a:hover {
+  background-color: #ffd380 !important; /* efecto hover */
+  transition: background-color 0.4s ease, color 0.4s ease;
+  color: #471c0c !important;
+}
+.btn-contacto3 {
+  border: 2px solid #471c0c;
+  color: #471c0c; /* quitar !important */
+  background-color: transparent;
+  transition: all 0.4s ease;
+}
+.btn-contacto3:hover {
+  background-color: #471c0c;
+  border-color: #471c0c;
+  color: #ffd380;
+}
+/* Links dentro del menú */
+#lightnav.navbar-default .dropdown-menu > li > a {
+  color: white !important;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+/* estilo base */
+.dropdown-menu {
+  display: block !important;        /* siempre block para poder animar */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-radius: 0 0 2em 2em !important;       /* esquinas redondeadas abajo */
+  transition: all 0.4s ease;
+}
+
+/* cuando bootstrap lo abre */
+.dropdown-menu.show,
+.open > .dropdown-menu {
+  max-height: 500px;
+  opacity: 1;
+}
+</style>
+<style>
+#lightnav a {
+    color: white !important;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+#lightnav a:hover {
+    color: black !important;
+}
+/* Estado normal */
+.social-buttons .fa-facebook {
+  color: #471c0c;              /* color inicial del ícono */
+  border: 4px solid #471c0c; /* borde granate */
+  border-radius: 0.25em;
+  padding-top: 10px;
+  transition: all 0.3s ease;
+  margin-left: -2px; /* mueve hacia la derecha */
+  margin-top: -9.25px;  /* baja el ícono */
+}
+
+/* Hover */
+.social-buttons .fa-facebook:hover {
+  color: #ffd380;              /* ícono blanco */
+  background-color: #471c0c; /* fondo granate */
+  border-color: #471c0c;     /* borde granate */
+}
+.logo-container {
+  position: relative;
+  width: auto;
+  height: 50px;
+  display: inline-block;
+  margin-top: -12px;
+  margin-left: -100px;
+}
+
+.logo-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  transition: opacity 0.4s ease;
+}
+
+.logo-base {
+  z-index: 1;
+  opacity: 1;
+}
+
+.logo-hovered {
+  z-index: 2;
+  opacity: 0;
+}
+
+.logo-container:hover .logo-hovered {
+  opacity: 1;
+}
+
+.logo-container:hover .logo-base {
+  opacity: 0;
+}
+</style>
+</head>
+
+<body>
+<!-- Loader -->
+<div class="loading"></div>
+<!-- /.Loader --> 
+
+<!-- Nav -->
+<nav class="navbar navbar-default navbar-fixed-top" id="lightnav" style="background-color: #471c0c;">
+<div class="container">
+<div class="navbar-header page-scroll"><button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span></button><a class="navbar-brand page-scroll text-uppercase pddn-10" href="index.html"><div class="logo-container">
+  <img src="assets/images/themelogo/logo3.png" class="logo-base" />
+  <img src="assets/images/themelogo/logo.png" class="logo-hovered" />
+</div>
+</a></div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: -100px;">
+<ul class="nav navbar-nav navbar-right"><!-- Dropdown -->
+	<li class="dropdown" role="presentation"><a href="index.html"><font>Inicio</font></a> <!-- /.Dropdown --> <!-- Dropdown Services --></li>
+	<li class="dropdown"><a href="espe.html">Especialidades</a></li>
+	<!-- /.Dropdown About --><!-- Portafolio -->
+	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" style="background-color: #471c0c;">Institucional <span class="caret"></span></a>
+	<ul class="dropdown-menu">
+		<li><a href="direccion.html">Direcci&oacute;n General</a></li>
+		<li><a href="admision.html">Admision</a></li>
+    <li><a href="cetna.html">CETNA</a></li>
+    <li><a href="Formularios.html">Formularios</a></li>
+	</ul>
+	</li>
+	<!-- /.Dropdown Team --><!-- Dropdown Contact -->
+	<li class="dropdown"><a href="contact2.html" style="color: #ffd380 !important;">Contacto</a></li>
+	<!-- /.Dropdown Blog --><!-- Dropdown About -->
+	<li class="dropdown"><a href="acerca.html">Acerca de</a></li>
+	<!-- /.Dropdown About -->
+</ul>
+</div>
+<!-- /.navbar-collapse --></div>
+<!-- /.container --></nav>
+<!-- /.Navigation -->
+<!-- Header -->
+<header id="agency-sm" class="indexbg1">
+	<video autoplay muted loop playsinline class="bgvideo">
+    <source src="C:\Users\eleme\Downloads\editor_publicaciones\editor_publicaciones\Modificacion del proyecto 2\video\background3.mp4" type="video/mp4">
+  </video>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"> 
+        <!-- Heading Title Area -->
+        <div class="header-text text-center white">
+          <h1>Contáctanos</h1>
+          <hr class="borderwhite-sm"/>
+          <h2 class="text-uppercase">Ante cualquier duda que tengas, no dudes en contactarnos.</h2>
+        </div>
+        <!-- Heading Title Area --> 
+      </div>
+    </div>
+  </div>
+  <!-- /.container --> 
+</header>
+<!-- /.Header --> 
+
+<!-- Contact Section -->
+<section id="contact-2">
+  <div class="container">
+  <!-- Contact Section Title and Description -->
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h2 class="section-heading">Contacto</h2>
+      <h3 class="section-subheading text-muted">Envíenos sugerencias, consultas y reclamos. Le responderemos a su correo electrónico lo más pronto posible.</h3>
+    </div>
+  </div>
+  <!-- /.Contact Section Title and Description -->
+  <hr class="border-sm mrgn-50-btm"/>
+  <!-- Contact Content -->
+  <div class="row">
+  <!-- Contact Form -->
+    <div class="col-sm-6">
+      <form class="mrgn-20-top" name="sentMessage" id="contactForm" novalidate>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Su Nombre *" style="border-radius: 2em;" id="name" required data-validation-required-message="Introduzca su nombre.">
+          <p class="help-block text-danger"></p>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Su Email *" style="border-radius: 2em;" id="email" required data-validation-required-message="Introduzca su email.">
+          <p class="help-block text-danger"></p>
+        </div>
+        <div class="form-group">
+          <input type="tel" class="form-control" placeholder="Su Teléfono *" style="border-radius: 2em;" id="phone" required data-validation-required-message="Introduzca su número.">
+          <p class="help-block text-danger"></p>
+        </div>
+       
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Su Mensaje *" style="border-radius: 2em;" id="message" required data-validation-required-message="Introduzca un mensaje."></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div class="clearfix"></div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-larger btn-block btn-contacto3" style="border-radius: 2em;">Enviar Mensaje</button>
+      </form>
+    </div>
+    <!-- /.Contact Form -->
+    
+    <!-- Contact Information -->
+    <div class="col-sm-5 col-sm-offset-1 mrgn-50-btm">
+      <h2>Llámanos</h2>
+      <p>(021) 608 663</p>
+      <h2 class="mrgn-50-top">Encuéntrenos</h2>
+      <p>R.I. 3 Corrales c/ Dr. Hassler<br/>
+        Campos Cervera, Asunción</p>
+      <h2 class="mrgn-50-top">Mántengase en contacto</h2>
+      <ul class="list-inline social-buttons mrgn-20-top btn">
+        <!--<li><a href="#"><i class="fa fa-twitter"></i></a> </li>-->
+        <li><a href="https://www.facebook.com/ctnoficial/"><i class="fa fa-facebook btn"></i></a> </li>
+        <!--<li><a href="#"><i class="fa fa-linkedin"></i></a> </li>-->
+      </ul>
+    </div>
+    <!-- /.Contact Information -->
+    </div>
+    <!-- /.Contact Content -->
+  </div>
+  <!-- /.container --> 
+</section>
+<!-- /.Contact Section -->
+
+<!-- Map Section -->
+<section id="map" class="no-padding">
+  <div class="container-fluid no-gutter">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item"  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14428.32352551636!2d-57.570794!3d-25.3014865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xeffc066c18dbc524!2sColegio+T%C3%A9cnico+Nacional+de+Asunci%C3%B3n!5e0!3m2!1ses!2spy!4v1477444051015" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid --> 
+</section>
+<!-- /.Map Section --> 
+
+<!-- Footer -->
+<footer class="bg-dark-blue">
+  <div class="container">
+    <div class="row"> 
+      <!-- Address, Social Links & Copyright -->
+      <div class="col-md-4 col-md-offset-4">
+        <p>R.I. 3 Corrales c/ Dr. Hassler<br/>
+          Campos Cervera, Asunción</p>
+        <span class="copyright">Copyright &copy; Desarrollado en la especialidad de Informática.</span> </div>
+    </div>
+    <!-- /.Address, Social Links & Copyright --> 
+  </div>
+  <!-- /.container --> 
+</footer>
+<!-- /.Footer --> 
+
+<!-- jQuery --> 
+<script src="assets/js/jquery.js"></script> 
+<!-- Bootstrap Core JavaScript --> 
+<script src="assets/js/bootstrap.min.js"></script> 
+<!-- JavaScript Plugins -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script> 
+<script src="assets/js/isotope.pkgd.min.js"></script> 
+<script src="assets/js/wow.min.js"></script> 
+<script src="assets/owl-carousel/owl.carousel.js"></script> 
+<script src="assets/js/counterup/jquery.counterup.min.js"></script> 
+<script src="assets/js/jquery.easy-pie-chart.js"></script> 
+<script src="assets/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!-- Contact Form JavaScript --> 
+<script src="assets/js/jqBootstrapValidation.js"></script> 
+<script src="assets/js/contact_me.js"></script> 
+<!-- Custom Theme JavaScript --> 
+<script src="assets/js/blueridge.js"></script>
+</body>
+</html>
